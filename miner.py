@@ -32,8 +32,8 @@ def seedGenerator(steps=1, number=0, variator=passphrase):
 def addressChecker(seed, target):
 	try:
 		address = pw.Address(seed = seed)
-		address.address.lower().find(target.lower(), 1) != -1:
-		return (address)
+		if (address.address.lower().find(target.lower(), 1) != -1:
+			return (address)
 	except:
 		print("offine while trying to get address from seed {0}".format(seed))
 		sleep(10)
