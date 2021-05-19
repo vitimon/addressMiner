@@ -32,13 +32,8 @@ def seedGenerator(steps=1, number=0, variator=passphrase):
 def addressChecker(seed, target):
 	try:
 		address = pw.Address(seed = seed)
-		try:
-			if address.address.lower().find(target.lower(), 1) != -1:
-				return (address)
-		except:
-			print("offline while trying to get balance from {0}".format(address.address))
-			sleep(10)
-			return addressChecker(seed, target)
+		address.address.lower().find(target.lower(), 1) != -1:
+		return (address)
 	except:
 		print("offine while trying to get address from seed {0}".format(seed))
 		sleep(10)
@@ -54,7 +49,7 @@ while(i<10**(15*steps)):
 	if result:
 		print("address minned")
 		writeResult = open("results.txt","a")
-		writeResult.write("{0}\n".format(result))
+		writeResult.write("{0}\n\n".format(result))
 		writeResult.close()
 	i+=1
 	currentTime = time()
